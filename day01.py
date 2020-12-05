@@ -12,8 +12,8 @@ def part_1():
             if num_2 > other_num:
               break
             elif num_2 == other_num:
-                print(f'{num_1} + {num_2} = {SUM}')
-                print(f'Answer is {num_1} * {num_2} = {num_1 * num_2}')
+                print(f'{num_1} + {num_2} = {num_1 + num_2}')
+                print(f'Part 1 answer: {num_1} * {num_2} = {num_1 * num_2}')
                 return
 
 def part_2():
