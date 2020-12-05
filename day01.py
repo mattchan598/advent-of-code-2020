@@ -1,6 +1,9 @@
 INPUT_FILE = "input01.txt"
 SUM = 2020
 
+'''
+Find two numbers that add up to 2020 and multiply them
+'''
 def part_1():
     input = sorted(get_nums(INPUT_FILE), reverse=True)
     for num_1 in input:
