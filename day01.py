@@ -3,7 +3,6 @@ SUM = 2020
 
 def part_1():
     input = sorted(get_nums(INPUT_FILE), reverse=True)
-    # print(type(input))
     for num_1 in input:
         other_num = 2020 - num_1
         for num_2 in reversed(input):
@@ -12,6 +11,10 @@ def part_1():
             elif num_2 == other_num:
                 print(f'{num_1} + {num_2} = {SUM}')
                 print(f'Answer is {num_1} * {num_2} = {num_1 * num_2}')
+                return
+
+def part_2():
+    
 
 
 def get_nums(input_file):
