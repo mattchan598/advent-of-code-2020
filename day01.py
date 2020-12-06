@@ -17,7 +17,17 @@ def part_1():
                 return
 
 def part_2():
-    
+    input = sorted(get_nums(INPUT_FILE), reverse=True)
+    for num_1 in input:
+        for num_2 in input:
+            other_num = 2020 - num_1 - num_2
+            for num_3 in reversed(input):
+                if num_3 > other_num:
+                    break
+                elif num_3 == other_num:
+                    print(f'{num_1} + {num_2} + {num_3} = {num_1 + num_2 + num_3}')
+                    print(f'Part 2 answer: {num_1} * {num_2} * {num_3}= {num_1 * num_2 * num_3}')
+                    return
 
 
 def get_nums(input_file):
@@ -26,3 +36,4 @@ def get_nums(input_file):
 
 if __name__ == '__main__':
     part_1()
+    part_2()
