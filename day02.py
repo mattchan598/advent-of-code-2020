@@ -24,7 +24,9 @@ def part_2():
 
     for line in input:
         (position_1, position_2, letter, password) = regex.match(line).groups()
-
+        if (password[int(position_1)-1] is letter and password[int(position_2)-1] is not letter) or (password[int(position_2)-1] is letter and password[int(position_1)-1] is not letter):
+            count += 1
+    print(f"Number of valid passwords: {count}")
 
 def get_input(input_file):
     with open(input_file) as f:
@@ -32,5 +34,5 @@ def get_input(input_file):
 
 
 if __name__ == '__main__':
-    part_1()
+    # part_1()
     part_2()
