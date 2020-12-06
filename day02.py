@@ -34,5 +34,5 @@ def get_input(input_file):
 
 
 if __name__ == '__main__':
-    # part_1()
+    part_1()
     part_2()
