@@ -16,11 +16,14 @@ def part_1():
                 print(f'Part 1 answer: {num_1} * {num_2} = {num_1 * num_2}')
                 return
 
+'''
+Find three numbers that add up to 2020 and multiply them
+'''
 def part_2():
     input = sorted(get_nums(INPUT_FILE), reverse=True)
     for num_1 in input:
         for num_2 in input:
-            other_num = 2020 - num_1 - num_2
+            other_num = SUM - num_1 - num_2
             for num_3 in reversed(input):
                 if num_3 > other_num:
                     break
