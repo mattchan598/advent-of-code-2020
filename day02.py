@@ -4,6 +4,13 @@ INPUT_FILE = "input02.txt"
 line_regex = r"(\d+)-(\d+) ([a-z]): ([a-z]+)"
 
 
+
+'''
+Find number of valid passwords in input.
+Each line gives the password policy and then the password.
+The password policy indicates the lowest and highest number of times a given letter must appear for the password to be valid.
+i.e. "1-3 a: abcde"
+'''
 def part_1():
     count = 0
     input = get_input(INPUT_FILE)
@@ -17,6 +24,12 @@ def part_1():
     print(f"Number of valid passwords: {count}")
 
 
+"""
+Find number of valid passwords in input.
+Each line gives the password policy and then the password.
+The first and second numbers describe positions in the password (first letter is 1).
+Exactly one of these poisitions must contain the given letter.
+"""
 def part_2():
     count = 0
     input = get_input(INPUT_FILE)
