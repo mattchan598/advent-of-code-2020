@@ -6,9 +6,11 @@ Find the number of trees in your path.
 Trees are denoted by a "#" in the input.
 The path is right 3, down 1 starting at the top-left of the input.
 """
+
+
 def part_1():
     count = 0
-    input = get_input(INPUT_FILE) 
+    input = get_input(INPUT_FILE)
     line_length = len(input[0])
     place = 0
 
@@ -20,6 +22,7 @@ def part_1():
             place -= line_length
 
     print(f"Number of trees hit: {count}")
+
 
 """
 Find the number of trees in each path.
@@ -33,15 +36,18 @@ The paths are:
 starting at the top-left of the input.
 The answer is all the trees in each path multiplied together.
 """
+
+
 def part_2():
     counts = [0, 0, 0, 0, 0]
     paths = [1, 3, 5, 7, 1]
-    input = get_input(INPUT_FILE) 
+    input = get_input(INPUT_FILE)
     line_length = len(input[0])
-    places = [0, 0 ,0 ,0 ,0]
+    places = [0, 0, 0, 0, 0]
 
     for index, line in enumerate(input):
         for i in range(len(places)):
+            # check for the last path where you go down 2
             if i == 4 and (index % 2 != 0):
                 continue
             if line[places[i]] is TREE:
@@ -56,10 +62,10 @@ def part_2():
     print(f"Final Answer: {ans}")
 
 
-
 def get_input(input_file):
     with open(input_file) as f:
         return [line.strip() for line in f.readlines()]
+
 
 if __name__ == '__main__':
     part_1()
