@@ -1,9 +1,9 @@
 INPUT_FILE = "input01.txt"
 SUM = 2020
 
-'''
+"""
 Find two numbers that add up to 2020 and multiply them
-'''
+"""
 def part_1():
     input = sorted(get_nums(INPUT_FILE), reverse=True)
     for num_1 in input:
@@ -16,9 +16,9 @@ def part_1():
                 print(f'Part 1 answer: {num_1} * {num_2} = {num_1 * num_2}')
                 return
 
-'''
+"""
 Find three numbers that add up to 2020 and multiply them
-'''
+"""
 def part_2():
     input = sorted(get_nums(INPUT_FILE), reverse=True)
     for num_1 in input:
