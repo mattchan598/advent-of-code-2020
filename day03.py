@@ -12,7 +12,7 @@ def part_1():
     line_length = len(input[0])
     place = 0
 
-    for line in enumerate(input):
+    for line in input:
         if line[place] is TREE:
             count += 1
         place += 3
@@ -21,6 +21,17 @@ def part_1():
 
     print(f"Number of trees hit: {count}")
 
+"""
+Find the number of trees in each path.
+Trees are denoted by a "#" in the input.
+The paths are: 
+    -right 1, down 1
+    -right 3, down 1
+    -right 5, down 1
+    -right 7, down 1
+    -right 1, down 2
+starting at the top-left of the input.
+"""
 def part_2():
     count = 0
 
