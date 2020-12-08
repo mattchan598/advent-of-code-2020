@@ -12,7 +12,7 @@ def part_1():
     line_length = len(input[0])
     place = 0
 
-    for index, line in enumerate(input):
+    for line in enumerate(input):
         if line[place] is TREE:
             count += 1
         place += 3
