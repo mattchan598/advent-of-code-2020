@@ -31,9 +31,31 @@ The paths are:
     -right 7, down 1
     -right 1, down 2
 starting at the top-left of the input.
+The answer is all the trees in each path multiplied together.
 """
 def part_2():
-    count = 0
+    counts = [0, 0, 0, 0, 0]
+    paths = [1, 3, 5, 7, 1]
+    input = get_input(INPUT_FILE) 
+    line_length = len(input[0])
+    places = [0, 0 ,0 ,0 ,0]
+
+    for index, line in enumerate(input):
+        for i in range(len(places)):
+            if i == 4 and (index % 2 != 0):
+                continue
+            if line[places[i]] is TREE:
+                counts[i] += 1
+            places[i] += paths[i]
+            if places[i] > line_length - 1:
+                places[i] -= line_length
+    print(f"Number of trees in each path: {counts}")
+    ans = 1
+    for num in counts:
+        ans *= num
+    print(f"Final Answer: {ans}")
+
+
 
 def get_input(input_file):
     with open(input_file) as f:
